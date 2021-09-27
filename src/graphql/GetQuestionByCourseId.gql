@@ -1,0 +1,30 @@
+query GetQuestionByCourseId($first: Int!, $offset: Int!) {
+  Question(first: $first, offset: $offset, orderBy: difficulty_desc) {
+    questionId
+    name
+    text
+    difficulty
+    visible
+    abilities {
+      abilityId
+      name
+    }
+    solutions {
+      questionSolutionId
+    }
+    answers {
+      text
+      fraction
+      questionAnswerId
+    }
+    issueReports {
+      id
+    }
+    topic {
+      topicId
+      course {
+        name
+      }
+    }
+  }
+}
